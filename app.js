@@ -4608,7 +4608,7 @@ correctIndex: 1
         "MH: 163°. MC: 175°.",
         "MH: 163°. MC: 161°."
       ],
-      correctIndex: 0
+      correctIndex: 2
     },
     {
       id: 25,
@@ -4851,7 +4851,7 @@ correctIndex: 1
         "Relative bearings (RB)",
         "Magnetic headings (MH)"
       ],
-      correctIndex: 1
+      correctIndex: 0
     },
     {
       id: 47,
@@ -5685,7 +5685,7 @@ correctIndex: 1
         "Southwest",
         "Northwest"
       ],
-      correctIndex: 1
+      correctIndex: 0
     },
     {
       id: 122,
