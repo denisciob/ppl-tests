@@ -1,7 +1,7 @@
 /* RESET BASIC */
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Century Gothic", "Century", cursive;
 }
 
 /* PAGE */
@@ -375,4 +375,158 @@ body.dark .image-container {
 
 body.dark .image-container img {
   opacity: 0.9; 
+}
+
+/* Stilizare pentru cutia cu explicații (Light Mode) */
+.explanation-box {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  background-color: #eef2f5;
+  border-left: 4px solid #3498db;
+  border-radius: 4px;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Stilizare pentru cutia cu explicații (Dark Mode) */
+body.dark .explanation-box {
+  background-color: #2b3e50;
+  border-left: 4px solid #3498db;
+  color: #ecf0f1;
+}
+
+/* Margini pentru elementele din listă ca să nu se suprapună */
+.option-wrapper {
+  margin-bottom: 10px;
+}
+
+.question-text {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+/* Animația de apariție */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Sistemul de Vizualizare și Adnotare Anexe --- */
+#image-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.viewer-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.canvas-container {
+  position: relative;
+  touch-action: none; /* Previne scroll-ul pe telefon când desenați */
+}
+
+#viewer-img {
+  max-width: 100%;
+  max-height: 75vh;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none; /* Împiedică tragerea imaginii de către browser */
+}
+
+#viewer-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: crosshair;
+  z-index: 2;
+}
+
+.viewer-controls {
+  margin-top: 20px;
+}
+
+.viewer-controls button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.mistake-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 15px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* --- 1. SETĂRI PENTRU BACKGROUND-UL DIN MENIU --- */
+/* Folosim o clasă pe care o vom adăuga/scoate din JavaScript */
+body.menu-active {
+    /* Gradientul rgba() acționează ca un filtru (overlay) opac peste poza startimg.png. 
+       0.85 reprezintă opacitatea (85%). Dacă aveți o temă închisă, schimbați 255,255,255 cu 20,20,20 */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('startimg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* --- 2. SETĂRI PENTRU AVIONUL CESSNA --- */
+#cessna-logo {
+    position: fixed; /* Îl ține fixat pe ecran chiar dacă utilizatorul dă scroll */
+    top: 15px;       /* Distanța de sus */
+    right: 20px;     /* Distanța din dreapta */
+    width: 150px;    /* Ajustați mărimea după preferință, 150px e destul de discret */
+    height: auto;
+    z-index: 1000;   /* Ne asigurăm că stă deasupra tuturor elementelor */
+    display: none;   /* Îl ținem ascuns implicit, va fi afișat din JS */
+    pointer-events: none; /* Foarte important: previne blocarea click-urilor pe eventualele butoane de sub el */
+    opacity: 0.9;    /* O ușoară transparență ca să nu deranjeze vizual */
+}
+ @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(12px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+#cessna-logo {
+    animation: float 4s ease-in-out infinite; /* Aceasta adaugă mișcarea */
 }
