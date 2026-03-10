@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<img src="cessna.png" id="cessna-logo" alt="Cessna 172 YR-MDP" />
 <audio id="bg-music" loop>
   <source src="chill.mp3" type="audio/mpeg">
 </audio>
@@ -42,6 +43,10 @@
     <option value="airlaw">Air Law</option>
     <option value="hp">Human Performances</option>
     <option value="communication">Communication</option>
+    <option value="pof">Principles of Flight</option>
+    <option value="planning">Flight Performance and Planning</option>
+    <option value="agk">Aircraft General Knowledge</option>
+    <option value="procedures">Operational Procedures</option>
   </select>
 
   <button onclick="confirmSubject()">Confirm</button>
@@ -96,6 +101,19 @@
   <button onclick="returnToSubjects()" style="margin-top: 20px; width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
     Back
   </button>
+</div>
+
+<div id="image-viewer" style="display:none;">
+  <div class="viewer-content">
+    <button class="close-btn" onclick="closeImageViewer()">✖</button>
+    <div class="canvas-container">
+      <img id="viewer-img" src="" alt="Exam Annex">
+      <canvas id="viewer-canvas"></canvas>
+    </div>
+    <div class="viewer-controls">
+      <button onclick="clearCanvas()">Remove annotations</button>
+    </div>
+  </div>
 </div>
 
 <script src="app.js"></script>
