@@ -511,15 +511,15 @@ body.menu-active {
 
 /* --- 2. SETĂRI PENTRU AVIONUL CESSNA --- */
 #cessna-logo {
-    position: fixed; /* Îl ține fixat pe ecran chiar dacă utilizatorul dă scroll */
+    position: absolute;
     top: 15px;       /* Distanța de sus */
     right: 20px;     /* Distanța din dreapta */
-    width: 150px;    /* Ajustați mărimea după preferință, 150px e destul de discret */
+    width: 130px;    /* Ajustați mărimea după preferință, 150px e destul de discret */
     height: auto;
     z-index: 1000;   /* Ne asigurăm că stă deasupra tuturor elementelor */
     display: none;   /* Îl ținem ascuns implicit, va fi afișat din JS */
     pointer-events: none; /* Foarte important: previne blocarea click-urilor pe eventualele butoane de sub el */
-    opacity: 0.7;    /* O ușoară transparență ca să nu deranjeze vizual */
+    opacity: 0.62;    /* O ușoară transparență ca să nu deranjeze vizual */
 }
  @keyframes float {
     0% { transform: translateY(0px) rotate(0deg); }
@@ -531,19 +531,10 @@ body.menu-active {
     animation: float 4s ease-in-out infinite; /* Aceasta adaugă mișcarea */
 }
 
-.cessna-logo {
-  position: fixed;   /* Fixează elementul pe ecran, ignorând scroll-ul */
-  top: 20px;         /* Lasă un spațiu de 20px față de marginea de sus */
-  right: 20px;       /* Lasă un spațiu de 20px față de marginea din dreapta */
-  z-index: 1000;     /* Asigură-te că imaginea stă deasupra textului/altor elemente */
-  width: 150px;      /* Opțional: ajustează lățimea după preferințe */
-  height: auto;      /* Păstrează proporțiile imaginii */
-}
-
 @media (max-width: 768px) {
   .cessna-logo {
-    width: 80px; /* O face mai mică pe telefon */
+    width: 70px; /* O face mai mică pe telefon */
     top: 10px;
-    right: 10px;
+    right: 12px;
   }
 }
