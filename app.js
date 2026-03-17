@@ -1,7 +1,7 @@
 document.body.classList.add('menu-active');
-const TEST_TIME_SECONDS = 1200;
-const PASS_PERCENTAGE = 75;
-const QUESTIONS_PER_TEST = 30;
+const TEST_TIME_SECONDS = 1800;
+const PASS_PERCENTAGE = 95;
+const QUESTIONS_PER_TEST = 50;
 
 /* USERS */
 let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -3098,6 +3098,609 @@ correctIndex: 1
       ],
       correctIndex: 0,
       explanation: "To create large raindrops or severe hail, water particles must make multiple vertical journeys through the cloud's freezing and liquid zones, accumulating layers of moisture. Only incredibly powerful vertical updrafts (characteristic of towering cumulonimbus clouds) can support the immense weight of these large particles before they finally fall."
+    },
+    {
+      id: 16,
+      question: "What is the ISA standard pressure at FL 180 (5500 m)?",
+      options: [
+        "250 hPa",
+        "300 hPa",
+        "1013.25 hPa",
+        "500 hPa"
+      ],
+      correctIndex: 3,
+      explanation: "Atmospheric pressure drops by approximately half for every 18,000 feet (5,500 meters) of altitude gained. Since the standard pressure at Mean Sea Level (MSL) is defined as 1,013.25 hPa, flying at Flight Level 180 means the atmospheric pressure decreases to half of that sea-level value, which is precisely 500 hPa."
+    },
+    {
+      id: 17,
+      question: "The pressure which is measured at a ground station and reduced to mean sea level (MSL) by means of the actual atmospheric conditions is called...",
+      options: [
+        "QNH.",
+        "QNE.",
+        "QFE.",
+        "QFF."
+      ],
+      correctIndex: 3,
+      explanation: "QFF represents the actual barometric pressure measured at a meteorological station and then reduced to Mean Sea Level (MSL) using the real, instantaneous atmospheric temperature and lapse rate. This is distinctly different from QNH, which uses the fictional standard temperature profile of the ISA for its mathematical reduction."
+    },
+    {
+      id: 18,
+      question: "Which processes result in decreasing air density?",
+      options: [
+        "Decreasing temperature, increasing pressure",
+        "Increasing temperature, decreasing pressure",
+        "Increasing temperature, increasing pressure",
+        "Decreasing temperature, decreasing pressure"
+      ],
+      correctIndex: 1,
+      explanation: "Air density is governed by the Ideal Gas Law. Heating a volume of air causes its molecules to move faster and spread further apart, inherently lowering its density. Similarly, if the atmospheric pressure decreases, the air is no longer compressed tightly, allowing it to expand naturally and further reducing its overall density."
+    },
+    {
+      id: 19,
+      question: "The pressure at MSL in ISA conditions is...",
+      options: [
+        "113.25 hPa.",
+        "15 hPa.",
+        "1013.25 hPa.",
+        "1123 hPa."
+      ],
+      correctIndex: 2,
+      explanation: "The International Standard Atmosphere (ISA) is a universally agreed-upon hypothetical atmospheric model used globally for aircraft performance calculations and altimeter calibration. By strict definition, it establishes the standard atmospheric pressure exactly at Mean Sea Level (MSL) as 1013.25 hectopascals (hPa)."
+    },
+    {
+      id: 20,
+      question: "The height of the tropopause of the International Standard Atmosphere (ISA) is at...",
+      options: [
+        "5500 ft.",
+        "11000 ft.",
+        "36000 ft.",
+        "48000 ft."
+      ],
+      correctIndex: 2,
+      explanation: "The ISA model defines the troposphere as the atmospheric layer where temperature steadily decreases with altitude. This temperature drop comes to an abrupt halt at a theoretical boundary known as the tropopause, which the ISA mathematically establishes at a standard height of 11,000 meters, equating to approximately 36,000 feet."
+    },
+    {
+      id: 21,
+      question: "The barometric altimeter indicates height above...",
+      options: [
+        "a selected reference pressure level.",
+        "mean sea level.",
+        "standard pressure 1013.25 hPa.",
+        "ground."
+      ],
+      correctIndex: 0,
+      explanation: "An altimeter is essentially an aneroid barometer equipped with a dial calibrated in feet or meters. It has no radar or ground-sensing capability. It strictly measures the ambient static air pressure outside the aircraft and computes the vertical distance upwards from whatever baseline pressure datum the pilot manually dials into the Kollsman window."
+    },
+    {
+      id: 22,
+      question: "The altimeter can be checked on the ground by setting...",
+      options: [
+        "QFE and comparing the indication with the airfield elevation.",
+        "QNH and comparing the indication with the airfield elevation.",
+        "QNE and checking that the indication shows zero on the ground.",
+        "QFF and comparing the indication with the airfield elevation."
+      ],
+      correctIndex: 1,
+      explanation: "Before takeoff, a pilot manually dials the local QNH (regional altimeter setting) into the instrument. Because QNH represents the local pressure mathematically reduced to sea level, a properly functioning altimeter sitting on the tarmac should perfectly display the published elevation of that specific airfield above Mean Sea Level."
+    },
+    {
+      id: 23,
+      question: "The barometric altimeter with QFE setting indicates...",
+      options: [
+        "height above the pressure level at airfield elevation.",
+        "true altitude above MSL.",
+        "height above MSL.",
+        "height above standard pressure 1013.25 hPa."
+      ],
+      correctIndex: 0,
+      explanation: "QFE refers to the uncorrected, absolute barometric pressure measured directly on the airfield surface. When a pilot sets QFE on the altimeter subscale, it mathematically establishes the runway itself as the 'zero' altitude baseline. Therefore, the instrument will strictly indicate the aircraft's vertical height above the runway threshold."
+    },
+    {
+      id: 24,
+      question: "The barometric altimeter with QNH setting indicates...",
+      options: [
+        "height above standard pressure 1013.25 hPa.",
+        "height above the pressure level at airfield elevation.",
+        "true altitude above MSL.",
+        "height above MSL."
+      ],
+      correctIndex: 3,
+      explanation: "QNH is the current local barometric pressure calculated backwards down to Mean Sea Level (MSL) using standard atmospheric assumptions. When dialed into the altimeter, it establishes the ocean surface as the zero datum, meaning the altimeter will continually display the aircraft's indicated altitude above sea level."
+    },
+    {
+      id: 25,
+      question: "Given the following information, what is the true altitude? (rounded to the nearest 50 ft)\n\nQNH: 983 hPa\nAltitude: FL 85\nOutside Air Temperature: ISA - 10°",
+      options: [
+        "7900 ft",
+        "9400 ft",
+        "7300 ft",
+        "7600 ft"
+      ],
+      correctIndex: 2,
+      explanation: "First, calculate the pressure error: FL85 assumes a standard 1013 hPa. The actual QNH is 983. The difference is 30 hPa. At 27 ft per hPa, the aircraft is 810 ft lower than indicated (8500 - 810 = 7690 ft). Second, apply the temperature correction: Cold air compresses the atmosphere. Being 10 degrees colder than ISA introduces a roughly 4% altitude penalty (4% of 7690 is about 307 ft). Subtracting this yields an actual true altitude of approximately 7383 ft, which rounds nearest to 7300 ft."
+    },
+    {
+      id: 26,
+      question: "How can wind speed and wind direction be derived from surface weather charts?",
+      options: [
+        "By alignment and distance of isobaric lines",
+        "By alignment and distance of hypsometric lines",
+        "By alignment of lines of warm- and cold fronts.",
+        "By annotations from the text part of the chart"
+      ],
+      correctIndex: 0,
+      explanation: "On a surface meteorological chart, the alignment (orientation) of the isobars visually indicates the direction the wind is blowing. Furthermore, the distance between these lines reveals the pressure gradient: tightly packed isobars indicate a steep pressure gradient and high wind speeds, while widely spaced lines indicate calm winds."
+    },
+    {
+      id: 27,
+      question: "Which force causes \"wind\"?",
+      options: [
+        "Centrifugal force",
+        "Thermal force",
+        "Coriolis force",
+        "Pressure gradient force"
+      ],
+      correctIndex: 3,
+      explanation: "The atmosphere constantly attempts to balance itself. The Pressure Gradient Force is the primary thermodynamic mechanism that physically drives air molecules from areas of high barometric pressure towards areas of low barometric pressure. This lateral displacement of air is what we physically experience as wind."
+    },
+    {
+      id: 28,
+      question: "Above the friction layer, with a prevailing pressure gradient, the wind direction is...",
+      options: [
+        "perpendicular to the isohypses.",
+        "at an angle of 30° to the isobars towards low pressure.",
+        "parallel to the isobars.",
+        "perpendicular to the isobars."
+      ],
+      correctIndex: 2,
+      explanation: "At approximately 2,000 to 3,000 feet above the ground, the aerodynamic drag of the earth's surface completely vanishes. Here, the Pressure Gradient Force pushing the air is perfectly counterbalanced by the Coriolis Force deflecting the air. This state of equilibrium forces the wind to flow cleanly and continuously parallel to the isobars (known as geostrophic wind)."
+    },
+    {
+      id: 29,
+      question: "Which of the stated surfaces will reduce the wind speed most due to ground friction?",
+      options: [
+        "Flat land, deserted land, no vegetation",
+        "Oceanic areas",
+        "Mountainous areas, vegetation cover",
+        "Flat land, lots of vegetation cover"
+      ],
+      correctIndex: 2,
+      explanation: "Ground friction significantly retards wind speed. Smooth surfaces like open oceans or sandy deserts offer very little aerodynamic resistance. However, mountainous terrain combined with dense forests and high vegetation acts as a massive physical barrier, severely disrupting the airflow and maximizing the frictional reduction in wind speed."
+    },
+    {
+      id: 30,
+      question: "The movement of air flowing together is called...",
+      options: [
+        "convergence.",
+        "divergence.",
+        "soncordence.",
+        "subsidence."
+      ],
+      correctIndex: 0,
+      explanation: "In meteorology, convergence describes the phenomenon where horizontal air currents originating from different geographic directions flow into a single common central region. Because this accumulating air cannot penetrate the solid ground, it is violently squeezed together and physically forced upwards."
+    },
+    {
+      id: 31,
+      question: "The movement of air flowing apart is called...",
+      options: [
+        "convergence.",
+        "concordence.",
+        "divergence.",
+        "subsidence."
+      ],
+      correctIndex: 2,
+      explanation: "Divergence is the exact opposite of convergence. It occurs when a mass of descending air strikes the ground (such as the sinking air in the center of a high-pressure system) and is forced to fan out horizontally, flowing apart and accelerating radially away from the high-pressure center."
+    },
+    {
+      id: 32,
+      question: "What weather development will result from convergence at ground level?",
+      options: [
+        "Descending air and cloud formation",
+        "Ascending air and cloud dissipation",
+        "Descending air and cloud dissipation",
+        "Ascending air and cloud formation"
+      ],
+      correctIndex: 3,
+      explanation: "When horizontal wind currents crash together (converge) at the surface, the air is pooled and has nowhere to go but up. As this air is forced to ascend, it expands and cools adiabatically. If the rising air cools down to its dew point, the moisture condenses, triggering extensive cloud formation and precipitation."
+    },
+    {
+      id: 33,
+      question: "When air masses meet each other head on, how is this referred to and what air movements will follow?",
+      options: [
+        "Convergence resulting in sinking air",
+        "Divergence resulting in sinking air",
+        "Convergence resulting in air being lifted",
+        "Divergence resulting in air being lifted"
+      ],
+      correctIndex: 2,
+      explanation: "A head-on collision of two distinct air masses creates a localized convergence zone (a frontal boundary). The physics of this collision dictate that the incoming horizontal kinetic energy must be redirected vertically, forcefully lifting the incoming air masses off the surface and up into the atmosphere."
+    },
+    {
+      id: 34,
+      question: "What are the air masses that Central Europe is mainly influenced by?",
+      options: [
+        "Arctic and polar cold air",
+        "Polar cold air and tropical warm air",
+        "Equatorial and tropical warm air",
+        "Tropical and arctic cold air"
+      ],
+      correctIndex: 1,
+      explanation: "Central Europe is located in the temperate mid-latitudes, perfectly positioned on the atmospheric battleground between two massive global weather generators: the freezing Polar cold air masses pushing down from the Arctic, and the hot, moisture-laden Tropical warm air masses surging up from the Mediterranean and Africa."
+    },
+    {
+      id: 35,
+      question: "With regard to global circulation within the atmosphere, where does polar cold air meets subtropical warm air?",
+      options: [
+        "At the equator",
+        "At the geographic poles",
+        "At the subtropical high pressure belt",
+        "At the polar front"
+      ],
+      correctIndex: 3,
+      explanation: "The Polar Front is the massive, meandering, semi-permanent global boundary where freezing polar easterlies violently collide with the warmer mid-latitude westerlies. This dynamic, highly unstable frontal boundary encircles the globe and is responsible for spawning the vast majority of mid-latitude weather depressions."
+    },
+    {
+      id: 36,
+      question: "Winds blowing uphill are defined as...",
+      options: [
+        "katabatic winds.",
+        "anabatic winds.",
+        "convergent winds.",
+        "subsident winds."
+      ],
+      correctIndex: 1,
+      explanation: "During daytime, solar radiation intensively heats the slopes of mountains. The air directly touching these hot slopes becomes warm, less dense, and highly buoyant. Like a hot air balloon, this heated air naturally detaches and flows uphill towards the peaks, creating a steady breeze known meteorologically as an anabatic wind."
+    },
+    {
+      id: 37,
+      question: "Winds blowing downhill are defined as...",
+      options: [
+        "anabatic winds.",
+        "katabatic winds.",
+        "convergent winds.",
+        "subsident winds."
+      ],
+      correctIndex: 1,
+      explanation: "After sunset, mountain peaks cool extremely rapidly, radiating their heat away into space. The air touching these freezing peaks chills, becomes incredibly dense, and heavy. Driven entirely by gravity, this dense air plunges downhill into the valleys, manifesting as a cold, sweeping katabatic wind."
+    },
+    {
+      id: 38,
+      question: "Air descending behind a mountain range is defined as...",
+      options: [
+        "katabatic wind.",
+        "convergent wind.",
+        "anabatic wind.",
+        "divergent wind."
+      ],
+      correctIndex: 0,
+      explanation: "While classic katabatic winds are caused by nocturnal thermal cooling, any large-scale air mass that is forcefully driven down the lee side of a massive mountain range by prevailing weather systems exhibits the same heavy, descending, gravity-driven physics, and is therefore broadly grouped under the definition of a katabatic (down-flowing) wind."
+    },
+    {
+      id: 39,
+      question: "\"Foehn\" conditions usually develop with...",
+      options: [
+        "instability, widespread air blown against a mountain ridge.",
+        "stability, widespread air blown against a mountain ridge.",
+        "instability, high pressure area with calm wind.",
+        "stability, high pressure area with calm wind."
+      ],
+      correctIndex: 1,
+      explanation: "A classic Foehn wind setup requires a large, relatively stable, and moist air mass to be forcibly pushed by a strong regional pressure gradient against a towering mountain ridge. The mechanical lifting extracts the moisture on the windward side, allowing the air to plunge down the lee side as a fiercely hot, dry wind."
+    },
+    {
+      id: 40,
+      question: "What type of turbulence is typically found close to the ground on the lee side during Foehn conditions?",
+      options: [
+        "Inversion turbulence",
+        "Turbulence in rotors",
+        "Clear-air turbulence (CAT)",
+        "Thermal turbulence"
+      ],
+      correctIndex: 1,
+      explanation: "As the violent Foehn wind accelerates down the lee (downwind) side of the mountain, it strikes the valley floor and bounces back up, creating stationary, horizontally spinning tornadoes of air known as rotor clouds. These rotors conceal exceptionally severe, often aircraft-destroying turbulence just a few thousand feet above the ground."
+    },
+    {
+      id: 41,
+      question: "Light turbulence always has to be expected...",
+      options: [
+        "above cumulus clouds due to thermal convection.",
+        "below stratiform clouds in medium layers.",
+        "when entering inversions.",
+        "below cumulus clouds due to thermal convection."
+      ],
+      correctIndex: 3,
+      explanation: "Cumulus clouds are the visible crowns of rising columns of warm air (thermals). To fly directly beneath a layer of cumulus clouds means an aircraft must continuously slice through an alternating field of strong thermal updrafts and the corresponding compensating downdrafts, guaranteeing a bumpy, turbulent ride."
+    },
+    {
+      id: 42,
+      question: "Moderate to severe turbulence has to be expected...",
+      options: [
+        "with the appearance of extended low stratus clouds (high fog).",
+        "overhead unbroken cloud layers.",
+        "below thick cloud layers on the windward side of a mountain range.",
+        "on the lee side of a mountain range when rotor clouds are present."
+      ],
+      correctIndex: 3,
+      explanation: "Rotor clouds form on the downwind (lee) side of large mountain ranges when high-speed winds crash over the peaks and roll into violent, horizontal vortices. These visual markers strictly warn pilots of intense structural wind shear and severe mixing currents capable of flipping light aircraft upside down."
+    },
+    {
+      id: 43,
+      question: "Which answer contains every state of water found in the atmosphere?",
+      options: [
+        "Liquid and solid",
+        "Liquid, solid, and gaseous",
+        "Gaseous and liquid",
+        "Liquid"
+      ],
+      correctIndex: 1,
+      explanation: "Water is totally unique in the Earth's atmosphere because it exists abundantly in all three physical states: Gaseous (invisible water vapor providing humidity), Liquid (rain, drizzle, and supercooled water droplets in clouds), and Solid (snow, hail, and high-altitude cirrus ice crystals)."
+    },
+    {
+      id: 44,
+      question: "How do dew point and relative humidity change with decreasing temperature?",
+      options: [
+        "Dew point remains constant, relative humidity decreases",
+        "Dew point decreases, relative humidity increases",
+        "Dew point increases, relative humidity decreases",
+        "Dew point remains constant, relative humidity increases"
+      ],
+      correctIndex: 3,
+      explanation: "If a parcel of air is cooled without adding or removing any actual water vapor, its absolute moisture content (and thus its dew point) remains perfectly constant. However, because cold air has a much smaller capacity to hold water vapor than warm air, the existing moisture represents a much higher percentage of its maximum capacity, causing the relative humidity to skyrocket."
+    },
+    {
+      id: 45,
+      question: "How do spread and relative humidity change with increasing temperature?",
+      options: [
+        "Spread increases, relative humidity decreases",
+        "Spread remains constant, relative humidity decreases",
+        "Spread increases, relative humidity increases",
+        "Spread remains constant, relative humidity increases"
+      ],
+      correctIndex: 0,
+      explanation: "The 'spread' is the gap between the actual air temperature and the dew point. If you heat the air, its temperature climbs while the dew point stays the same, massively widening the spread. This expanded heat capacity means the air is now far from saturation, which forces the relative humidity to drop drastically."
+    },
+    {
+      id: 46,
+      question: "The \"spread\" is defined as...",
+      options: [
+        "relation of actual to maximum possible humidity of air.",
+        "maximum amount of water vapour that can be contained in air.",
+        "difference between dew point and condensation point.",
+        "difference between actual temperature and dew point."
+      ],
+      correctIndex: 3,
+      explanation: "In aviation meteorology, the 'temperature/dew point spread' is the critical mathematical difference between the current ambient air temperature and the temperature at which that air would become fully saturated with moisture (the dew point). A spread of zero means thick fog is almost guaranteed."
+    },
+    {
+      id: 47,
+      question: "With other factors remaining constant, decreasing temperature results in...",
+      options: [
+        "decreasing spread and decreasing relative humidity.",
+        "increasing spread and decreasing relative humidity.",
+        "increasing spread and increasing relative humidity.",
+        "decreasing spread and increasing relative humidity."
+      ],
+      correctIndex: 3,
+      explanation: "As the ambient temperature falls, it physically approaches the stationary dew point temperature, effectively narrowing (decreasing) the spread. Because the air is losing its thermal capacity to hold invisible water vapor, it is moving closer to 100% saturation, meaning the relative humidity is sharply increasing."
+    },
+    {
+      id: 48,
+      question: "What process causes latent heat being released into the upper troposphere?",
+      options: [
+        "Descending air across widespread areas",
+        "Stabilisation of inflowing air masses",
+        "Cloud forming due to condensation",
+        "Evaporation over widespread water areas"
+      ],
+      correctIndex: 2,
+      explanation: "Water vapor absorbs massive amounts of heat energy (latent heat) when it evaporates from the ocean at the surface. When this vapor rises into the freezing upper troposphere and condenses back into liquid water droplets to form clouds, it undergoes a phase change that physically dumps all of that trapped heat energy back into the surrounding atmosphere."
+    },
+    {
+      id: 49,
+      question: "The saturated adiabatic lapse rate is...",
+      options: [
+        "lower than the dry adiabatic lapse rate.",
+        "proportional to the dry adiabatic lapse rate.",
+        "higher than the dry adiabatic lapse rate.",
+        "equal to the dry adiabatic lapse rate."
+      ],
+      correctIndex: 0,
+      explanation: "Dry air cools at a rapid rate of 3°C per 1,000 feet as it rises (DALR). However, when air is fully saturated and begins forming a cloud, the continuous act of condensation releases latent heat. This extra heat partially offsets the cooling process, meaning the saturated air cools much slower (SALR, roughly 1.5°C to 2°C per 1,000 ft). Therefore, SALR is noticeably lower than DALR."
+    },
+    {
+      id: 50,
+      question: "The dry adiabatic lapse rate has a value of...",
+      options: [
+        "1,0° C / 100 m.",
+        "2° / 1000 ft.",
+        "0,6° C / 100 m.",
+        "0,65° C / 100 m."
+      ],
+      correctIndex: 0,
+      explanation: "The Dry Adiabatic Lapse Rate (DALR) is a strict physical constant dictating how fast an unsaturated parcel of air cools strictly due to expansion as it rises into lower pressure. This precise rate is established at 3°C per 1,000 feet, which translates mathematically in the metric system to exactly 1.0°C of cooling for every 100 meters of altitude gained."
+    },
+    {
+      id: 51,
+      question: "The saturated adiabatic lapse rate should be assumed with a mean value of:",
+      options: [
+        "1,0° C / 100 m.",
+        "0° C / 100 m.",
+        "0,6° C / 100 m.",
+        "2° C / 1000 ft."
+      ],
+      correctIndex: 2,
+      explanation: "Because the release of latent heat during condensation severely slows down the cooling process of rising saturated air, the Saturated Adiabatic Lapse Rate (SALR) is not fixed. However, for standard meteorological computations and pilot exams, an accepted global average value is utilized, established precisely at 0.6°C per 100 meters."
+    },
+    {
+      id: 52,
+      question: "What weather conditions may be expected during conditionally unstable conditions?",
+      options: [
+        "Layered clouds up to high levels, prolonged rain or snow",
+        "Shallow cumulus clouds with base at medium levels",
+        "Sky clear of clouds, sunshine, low winds",
+        "Towering cumulus, isolated showers of rain or thunderstorms"
+      ],
+      correctIndex: 3,
+      explanation: "'Conditional instability' means the atmosphere is stable for dry air but violently unstable for saturated air. If a moist air parcel is forced upward until it forms a cloud, the latent heat release will suddenly make it warmer than the surrounding air. This acts like a massive turbocharger, causing the cloud to erupt vertically into towering Cumulus congestus or violent Cumulonimbus thunderstorms accompanied by intense showers."
+    },
+    {
+      id: 53,
+      question: "Which conditions are likely for the formation of advection fog?",
+      options: [
+        "Cold, humid air moves over a warm ocean",
+        "Warm, humid air moves over a cold surface",
+        "Warm, humid air cools during a cloudy night",
+        "Humidity evaporates from warm, humid ground into cold air"
+      ],
+      correctIndex: 1,
+      explanation: "Advection fog relies entirely on horizontal wind movement (advection). It forms when a thick blanket of warm, incredibly moist air is physically blown across a severely chilled surface (such as a freezing ocean current or snow-covered plains). The cold surface aggressively chills the bottom layer of the air mass below its dew point, manifesting as a dense, rolling fog bank."
+    },
+    {
+      id: 54,
+      question: "Clouds are basically distinguished by what types?",
+      options: [
+        "Stratiform and ice clouds",
+        "Layered and lifted clouds",
+        "Cumulus and stratiform clouds",
+        "Thunderstorm and shower clouds"
+      ],
+      correctIndex: 2,
+      explanation: "The entire global classification system of clouds is rooted in two fundamental morphological structures dictated by atmospheric stability. The first category is 'Cumuliform' (heap-like, vertically developed clouds indicating extreme instability and updrafts), and the second is 'Stratiform' (flat, horizontally layered, sheet-like clouds indicating a perfectly stable, tranquil atmosphere)."
+    },
+    {
+      id: 55,
+      question: "Clouds in high layers are referred to as...",
+      options: [
+        "Nimbo-.",
+        "Strato-.",
+        "Alto-.",
+        "Cirro-."
+      ],
+      correctIndex: 3,
+      explanation: "In standard meteorological nomenclature, clouds are prefixed according to their altitude tier. Clouds forming in the absolute highest, freezing layers of the troposphere (above 20,000 feet) consist entirely of ice crystals and are universally identified by the prefix 'Cirro-' (e.g., Cirrus, Cirrostratus, Cirrocumulus)."
+    },
+    {
+      id: 56,
+      question: "What weather phenomenon designated by \"2\" has to be expected on the lee side during \"Foehn\" conditions? See figure (MET-001).",
+      img: "MET-001.png",
+      options: [
+        "Altocumulus Castellanus",
+        "Nimbostratus",
+        "Cumulonimbus",
+        "Altocumulus lenticularis"
+      ],
+      correctIndex: 3,
+      explanation: "Figure MET-001 illustrates massive standing mountain waves flowing smoothly down the lee side of an alpine ridge. At the absolute crest of these invisible atmospheric waves, the air briefly reaches its dew point, forming incredibly smooth, highly distinct, lens-shaped (or UFO-like) clouds. These are scientifically designated as Altocumulus lenticularis."
+    },
+    {
+      id: 57,
+      question: "What cloud type does the picture show? See figure (MET-002).",
+      img: "MET-002.png",
+      options: [
+        "Stratus",
+        "Cumulus",
+        "Altus",
+        "Cirrus"
+      ],
+      correctIndex: 1,
+      explanation: "The photograph displays isolated, distinct cloud formations with exceptionally flat, dark bases and brilliantly white, bulging, cauliflower-like tops erupting vertically against a blue sky. These are the classic visual hallmarks of fair-weather Cumulus clouds, driven by localized thermal updrafts from the ground."
+    },
+    {
+      id: 58,
+      question: "What cloud type does the picture show? See figure (MET-004).",
+      img: "MET-004.png",
+      options: [
+        "Altocumulus",
+        "Cumulus",
+        "Stratus",
+        "Cirrus"
+      ],
+      correctIndex: 3,
+      explanation: "The image reveals high-altitude skies brushed with delicate, fibrous, hair-like streaks of white cloud. Because they exist at extreme altitudes where temperatures are profoundly below freezing, these clouds are composed entirely of ice crystals being violently sheared by the high-speed jet stream, classifying them definitively as Cirrus clouds."
+    },
+    {
+      id: 59,
+      question: "What factor may affect the top of cumulus clouds?",
+      options: [
+        "Relative humidity",
+        "The spread",
+        "The presence of an inversion layer",
+        "The absolute humidity"
+      ],
+      correctIndex: 2,
+      explanation: "A cumulus cloud will continue to grow vertically as long as the air inside the cloud is warmer and more buoyant than the outside air. However, if the rising cloud abruptly hits a temperature inversion—a layer where the outside air suddenly becomes significantly warmer—the cloud's buoyancy is instantly obliterated, causing it to flatten out completely against this invisible atmospheric ceiling."
+    },
+    {
+      id: 60,
+      question: "What factors may indicate a tendency to fog formation?",
+      options: [
+        "Low pressure, increasing temperature",
+        "Low spread, decreasing temperature",
+        "Low spread, increasing temperature",
+        "Strong winds, decreasing temperature"
+      ],
+      correctIndex: 1,
+      explanation: "The critical warning sign for imminent fog is a 'low spread' (the ambient temperature is sitting only 1 or 2 degrees above the dew point). If the evening progresses and the temperature continues decreasing towards that dew point, the air will inevitably hit 100% humidity, forcing the invisible vapor to condense into a thick ground fog."
+    },
+    {
+      id: 61,
+      question: "What condition may prevent the formation of \"radiation fog\"?",
+      options: [
+        "Overcast cloud cover",
+        "Calm wind",
+        "Low spread",
+        "Clear night, no clouds"
+      ],
+      correctIndex: 0,
+      explanation: "Radiation fog requires the Earth's surface to rapidly bleed its accumulated heat away into the freezing void of space over a clear night. An overcast layer of thick clouds acts exactly like a heavy thermal blanket, reflecting the Earth's heat back down to the surface. This prevents the ground from chilling the air enough to trigger condensation, completely stopping the formation of radiation fog."
+    },
+    {
+      id: 62,
+      question: "What process results in the formation of \"advection fog\"?",
+      options: [
+        "Cold, moist air is being moved across warm ground areas",
+        "Warm, moist air is moved across cold ground areas",
+        "Cold, moist air mixes with warm, moist air",
+        "Prolonged radiation during nights clear of clouds"
+      ],
+      correctIndex: 1,
+      explanation: "As defined previously, 'advection' refers to horizontal motion. Advection fog is generated when prevailing winds continuously pump a mass of warm, highly humid air directly over a vast, freezing surface (like coastal waters or deep snow). The extreme chill of the surface cools the passing air stream to saturation, creating enormous fog banks that can blanket regions for days."
+    },
+    {
+      id: 63,
+      question: "What process results in the formation of \"orographic fog\" (\"hill fog\")?",
+      options: [
+        "Prolonged radiation during nights clear of clouds",
+        "Warm, moist air is moved across a hill or a mountain range",
+        "Cold, moist air mixes with warm, moist air",
+        "Evaporation from warm, moist ground area into very cold air"
+      ],
+      correctIndex: 1,
+      explanation: "Orographic lifting occurs when horizontal winds smash into a towering physical obstacle like a hill or mountain. The moving air has no choice but to ride up the slope. As it climbs into lower atmospheric pressure, it undergoes adiabatic cooling. If the air is moist, this forced cooling rapidly saturates it, blanketing the hillside in thick orographic fog."
+    },
+    {
+      id: 64,
+      question: "What factors are required for the formation of precipitation in clouds?",
+      options: [
+        "High humidity and high temperatures",
+        "The presence of an inversion layer",
+        "Calm winds and intensive sunlight insolation",
+        "Moderate to strong updrafts"
+      ],
+      correctIndex: 3,
+      explanation: "The microscopic water droplets that initially form a cloud are far too light to overcome atmospheric friction and fall as rain. They require moderate to strong internal updrafts to continuously tumble and smash them into one another. This violent mixing process allows them to coalesce and grow large and heavy enough to overcome the updraft and plummet to the Earth as precipitation."
+    },
+    {
+      id: 65,
+      question: "The formation of medium to large precipitation particles requires...",
+      options: [
+        "a high cloud base.",
+        "strong wind.",
+        "an inversion layer.",
+        "strong updrafts."
+      ],
+      correctIndex: 3,
+      explanation: "For a raindrop or hailstone to grow to a medium or large size, it must remain suspended inside the turbulent, supercooled environment of the cloud for a prolonged period, gathering more water layer by layer. Only exceptionally strong, violent vertical updrafts have the aerodynamic muscle required to hold these massive, heavy particles aloft against gravity until they are fully formed."
     },
     {
       id: 66,
