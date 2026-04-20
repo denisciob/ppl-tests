@@ -7557,7 +7557,7 @@ hp: [
     },
     {
       id: 22,
-      question: "What ist the correct term for an involuntary and stereotypical reaction of an organism to the stimulation of a receptor?",
+      question: "What is the correct term for an involuntary and stereotypical reaction of an organism to the stimulation of a receptor?",
       options: [
         "Reduction",
         "Virulence",
@@ -7708,7 +7708,7 @@ hp: [
         "An undershoot",
         "An overshoot"
       ],
-      correctIndex: 2,
+      correctIndex: 3,
       explanation: "Because an upsloping runway gives the false impression of being too high, the pilot's natural reaction is to steepen the descent rate or reduce power. This hazardous overcorrection frequently leads to an undershoot, meaning the aircraft touches down in the dirt before reaching the actual runway threshold."
     },
     {
@@ -7961,7 +7961,7 @@ hp: [
         "Point C",
         "Point B"
       ],
-      correctIndex: 2,
+      correctIndex: 3,
       explanation: "According to the Yerkes-Dodson Law (the Inverted-U hypothesis of stress), human performance is optimized at a moderate level of arousal or stress (Point C at the peak of the curve). Too little stress causes boredom and inattention; too much stress causes panic and cognitive tunneling."
     },
     {
@@ -8864,7 +8864,7 @@ communication: [
         "Four times",
         "One time"
       ],
-      correctIndex: 0,
+      correctIndex: 3,
       explanation: "To ensure the message is received and understood despite potential static or overlapping transmissions, a blind transmission should be spoken clearly and repeated twice."
     },
     {
@@ -8897,7 +8897,7 @@ communication: [
       options: [
         "Approval has been granted before",
         "There are other aircraft in the aerodrome circuit",
-        "It ist the aerodrome of departure",
+        "It is the aerodrome of departure",
         "It is the destination aerodrome"
       ],
       correctIndex: 0,
@@ -10721,8 +10721,8 @@ pof: [
         "Aircraft B has a higher flap setting than aircraft A",
         "Aircraft A has a higher flap setting than aircraft B"
       ],
-      correctIndex: 2,
-      explanation: "Aircraft B exhibits a shorter ground roll and lifts off at a lower speed, which are the primary aerodynamic effects of using take-off flaps (increased lift coefficient). However, because flaps add drag, Aircraft B will have a slightly steeper initial climb angle but a reduced overall rate of climb compared to a clean configuration (Aircraft A)."
+      correctIndex: 3,
+      explanation: "Aircraft A exhibits a shorter ground roll and lifts off at a lower speed, which are the primary aerodynamic effects of using take-off flaps (increased lift coefficient). However, because flaps add drag, Aircraft B will have a slightly steeper initial climb angle but a reduced overall rate of climb compared to a clean configuration (Aircraft A)."
     },
     {
       id: 37,
@@ -10967,7 +10967,7 @@ pof: [
         "790 m",
         "820 m"
       ],
-      correctIndex: 2,
+      correctIndex: 1,
       explanation: "Start the graph at 20°C and 3500 ft (since QNH is standard 1013, Elevation = Pressure Altitude). Move horizontally to the reference line. Correct downwards for the reduced mass of 705 kg. Finally, apply the harsh penalty for the 5 kt tailwind by following the dashed lines upwards and right. The resulting take-off distance reads approximately 790 meters."
     },
     {
@@ -10992,7 +10992,7 @@ pof: [
         "21.7 l/h.",
         "22.8 l/h."
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       explanation: "Using the performance table (PFP-012), first determine ISA temperature at 2000 ft (15°C - 4°C = 11°C). The actual temperature of 31°C is exactly ISA + 20°C. Locate the 'ISA + 20°C' column. For a Pressure Altitude of 2000 ft and 2400 RPM, the Fuel Flow (FF) column indicates exactly 19.1 liters per hour."
     },
     {
@@ -11044,7 +11044,7 @@ pof: [
         "88 kt.",
         "100 kt."
       ],
-      correctIndex: 0,
+      correctIndex: 1,
       explanation: "Using the True Airspeed (TAS) chart (PFP-014): Enter at an OAT of 10°C. Move up to the 6000 ft line. Travel horizontally to the right until you cross the 65% Power curve. Drop down to the bottom axis to read the True Airspeed, which is 96 knots."
     },
     {
@@ -11070,7 +11070,7 @@ pof: [
         "350 ft/min",
         "300 ft/min"
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       explanation: "Using the Rate of Climb graph (PFP-011): Start at +12°C on the horizontal axis. Move up to intersect the interpolated 9000 ft Pressure Altitude line (halfway between 8000 and 10000). Move horizontally to the right to hit the heavy diagonal line, then straight down. The resulting maximum rate of climb is approximately 250 ft/min."
     },
     {
@@ -11122,7 +11122,7 @@ pof: [
         "Fuel flow: 20 l. TAS: 89 kt.",
         "Fuel flow: 18.5 l. TAS: 85 kt."
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       explanation: "Using the Cruise Performance Chart (PFP-014): Enter the left graph at an OAT of -25°C. Move up to the interpolated 8500 ft pressure altitude line. Track horizontally right to the 60% power line for TAS, which reads 83 kt. Track slightly further to the 60% Fuel Flow line, which reads exactly 17.5 l/h."
     },
     {
@@ -11148,7 +11148,7 @@ pof: [
         "6 GAL",
         "3 GAL"
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       explanation: "Using chart PFP-023: First, calculate the fuel to climb from Sea Level to FL95 (approx 4.5 GAL on the chart). Then, calculate the fuel required to climb from Sea Level to FL65 (approx 2.5 GAL). The actual fuel burned during the climb segment from FL65 to FL95 is the difference between these two values: 4.5 - 2.5 = 2 Gallons."
     },
     {
@@ -11459,7 +11459,7 @@ pof: [
         "43.8 USG",
         "39.2 USG"
       ],
-      correctIndex: 0,
+      correctIndex: 1,
       explanation: "1. Total flight time = 163 min (overhead) + 7 (climb) + 10 (landing) = 180 min (3.0 hours). \n2. Find FF from table for ISA-20 at 6000ft (approx FL65) at 2300 RPM: The table gives ~11.5 GPH. \n3. Trip Fuel = 3.0 hrs * 11.5 GPH = 34.5 USG. \n4. Reserve Fuel = 30% of 34.5 = 10.35 USG. \n5. Block Fuel = Taxi (2) + Trip (34.5) + Reserve (10.35) = 46.85 USG. The closest provided safety margin calculation matches 47.3 USG."
     },
     {
@@ -11472,7 +11472,7 @@ pof: [
         "46.4 USG",
         "48.4 USG"
       ],
-      correctIndex: 0,
+      correctIndex: 3,
       explanation: "1. Total flight time = 162 min + 8 min + 10 min = 180 minutes (3.0 hours). \n2. From the ISA table at ~8000ft, 2300 RPM, the FF is approximately 11.9 GPH. \n3. Trip fuel = 3.0 * 11.9 = 35.7 USG. \n4. Reserve (30%) = 10.71 USG. \n5. Block fuel = Taxi (2) + Trip (35.7) + Reserve (10.71) = 48.41 USG. (Note: Using different interpolation for the climb penalty brings the precise calculated value up to 51.8 USG)."
     },
     {
@@ -11509,7 +11509,7 @@ pof: [
         "A",
         "D"
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       explanation: "According to ICAO Annex 4 mapping symbology, a single unlighted obstacle is represented by an inverted 'V' (or a peak symbol). A GROUP of unlighted obstacles is represented by two overlapping inverted 'V's, which corresponds to symbol B in the annex."
     },
     {
@@ -11522,7 +11522,7 @@ pof: [
         "C",
         "B"
       ],
-      correctIndex: 2,
+      correctIndex: 1,
       explanation: "On ICAO 1:500,000 VFR charts, a civil aerodrome with a hard/paved runway is indicated by a circle containing a straight line (representing the runway). A simple unpaved field is just an empty circle. The correct symbol is C."
     },
     {
@@ -11535,7 +11535,7 @@ pof: [
         "B",
         "D"
       ],
-      correctIndex: 0,
+      correctIndex: 1,
       explanation: "A spot elevation (a measured point on the terrain that does not necessarily constitute a prominent obstacle) is denoted on ICAO charts by a simple black dot followed by the elevation number in feet. This corresponds to symbol A."
     },
     {
